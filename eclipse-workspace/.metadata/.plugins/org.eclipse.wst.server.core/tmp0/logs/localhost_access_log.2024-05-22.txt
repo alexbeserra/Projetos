@@ -1,6 +1,0 @@
-127.0.0.1 - - [22/May/2024:00:00:59 -0300] "GET / HTTP/1.1" 404 764
-127.0.0.1 - - [22/May/2024:00:00:59 -0300] "GET /Aula1/WEB-INF/classes/br/ufg/inf/backend/CalculadoraServlet.java HTTP/1.1" 404 695
-127.0.0.1 - - [22/May/2024:00:01:13 -0300] "GET /Aula1/calculadora?num1=2&num2=3&oper=soma HTTP/1.1" 200 27
-127.0.0.1 - - [22/May/2024:00:01:28 -0300] "GET /Aula1/calculadora?num1=2&num2=3&oper=subtracao HTTP/1.1" 200 33
-127.0.0.1 - - [22/May/2024:00:01:39 -0300] "GET /Aula1/calculadora?num1=2&num2=3&oper=multiplicacao HTTP/1.1" 200 36
-127.0.0.1 - - [22/May/2024:00:01:49 -0300] "GET /Aula1/calculadora?num1=2&num2=3&oper=divisao HTTP/1.1" 200 45

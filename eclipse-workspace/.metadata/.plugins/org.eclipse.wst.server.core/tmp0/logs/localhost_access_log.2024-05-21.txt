@@ -1,4 +1,0 @@
-127.0.0.1 - - [21/May/2024:23:58:25 -0300] "GET / HTTP/1.1" 404 764
-127.0.0.1 - - [21/May/2024:23:59:00 -0300] "GET / HTTP/1.1" 404 764
-127.0.0.1 - - [21/May/2024:23:59:01 -0300] "GET /Aula1/WEB-INF/classes/br/ufg/inf/backend/HelloServlet.java HTTP/1.1" 404 695
-127.0.0.1 - - [21/May/2024:23:59:18 -0300] "GET /Aula1/hello HTTP/1.1" 200 15

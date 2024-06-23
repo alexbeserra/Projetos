@@ -1,9 +1,0 @@
-127.0.0.1 - - [23/Jun/2024:19:39:52 -0300] "GET / HTTP/1.1" 404 764
-127.0.0.1 - - [23/Jun/2024:19:40:56 -0300] "GET /Aula1/calculadora?num1=4&num2=2&oper=multiplicacao HTTP/1.1" 200 36
-127.0.0.1 - - [23/Jun/2024:19:41:04 -0300] "GET /Aula1/calculadora?num1=4&num2=2&oper=soma HTTP/1.1" 200 27
-127.0.0.1 - - [23/Jun/2024:19:41:14 -0300] "GET /Aula1/calculadora?num1=4&num2=b&oper=soma HTTP/1.1" 200 56
-127.0.0.1 - - [23/Jun/2024:19:41:29 -0300] "GET /Aula1/calculadora?num1=4&num2=0&oper=divisao HTTP/1.1" 200 29
-127.0.0.1 - - [23/Jun/2024:19:54:40 -0300] "GET / HTTP/1.1" 404 764
-127.0.0.1 - - [23/Jun/2024:19:54:54 -0300] "GET /Aula1/calculadora?num1=4&num2=0&oper=divisao HTTP/1.1" 200 29
-127.0.0.1 - - [23/Jun/2024:19:55:00 -0300] "GET /Aula1/calculadora?num1=4&num2=0&oper=divisao HTTP/1.1" 200 29
-127.0.0.1 - - [23/Jun/2024:19:55:09 -0300] "GET /Aula1/calculadora?num1=4&num2=2&oper=divisao HTTP/1.1" 200 30
