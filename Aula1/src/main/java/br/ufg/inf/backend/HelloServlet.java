@@ -10,9 +10,14 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {
-@Override
-protected void doGet(HttpServletRequest request, HttpServletResponse
-response) throws ServletException, IOException {
-response.getWriter().println( "Hello, World!" );
-}
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.getWriter().println("Hello, World!");
+	}
 }
