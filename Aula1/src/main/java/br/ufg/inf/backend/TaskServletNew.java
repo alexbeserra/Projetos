@@ -8,15 +8,15 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/tasks")
+@WebServlet("/tasksnew")
 public class TaskServletNew extends HttpServlet {
     private TarefaService tarefaService;
 
-    @Override
-    public void init() throws ServletException {
+    public TaskServletNew(TarefaService tarefaService) {
         // Use EmailNotificacaoService for this example
-        NotificacaoService notificacaoService = new EmailNotificacaoService();
-        tarefaService = new TarefaService(notificacaoService);
+        //NotificacaoService notificacaoService = new EmailNotificacaoService();
+        // tarefaService = new TarefaService(notificacaoService);
+    	this.tarefaService = tarefaService;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class TaskServletNew extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String task = request.getParameter("task");
         if (task == null || task.trim().isEmpty()) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetro 'task' é obrigatório.");
+            response.getWriter().println("Parâmetro 'task' é obrigatório.");
             return;
         }
         tarefaService.adicionarTarefa(task);
@@ -49,13 +49,13 @@ public class TaskServletNew extends HttpServlet {
             int index = Integer.parseInt(request.getParameter("index")) - 1;
             String task = request.getParameter("task");
             if (index < 0 || index >= tarefaService.listarTarefas().size() || task == null || task.trim().isEmpty()) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetro inválido.");
+                response.getWriter().println("Parâmetro inválido.");
                 return;
             }
             tarefaService.atualizarTarefa(index, task);
             response.getWriter().println("Tarefa atualizada com sucesso: " + task);
         } catch (NumberFormatException e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetro 'index' deve ser um número válido.");
+            response.getWriter().println("Parâmetro 'index' deve ser um número válido.");
         }
     }
 
@@ -64,13 +64,13 @@ public class TaskServletNew extends HttpServlet {
         try {
             int index = Integer.parseInt(request.getParameter("index")) - 1;
             if (index < 0 || index >= tarefaService.listarTarefas().size()) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetro 'index' está fora do intervalo.");
+                response.getWriter().println("Parâmetro 'index' está fora do intervalo.");
                 return;
             }
             tarefaService.removerTarefa(index);
             response.getWriter().println("Tarefa removida com sucesso.");
         } catch (NumberFormatException e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Parâmetro 'index' deve ser um número válido.");
+            response.getWriter().println("Parâmetro 'index' deve ser um número válido.");
         }
     }
 }

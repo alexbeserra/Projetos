@@ -6,6 +6,8 @@ import java.util.List;
 public class TarefaService {
     private List<String> tasks = new ArrayList<>();
     private NotificacaoService notificacaoService;
+    
+    public TarefaService() {};
 
     public TarefaService(NotificacaoService notificacaoService) {
         this.notificacaoService = notificacaoService;
