@@ -13,6 +13,24 @@
 			<version>6.0.0</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Dependência do Spring Web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- Dependência para Thymeleaf -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>3.3.0</version>
+		</dependency>
+		<!-- Dependência para Deploy no Tomcat -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<version>3.3.0</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
