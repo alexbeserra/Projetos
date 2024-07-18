@@ -30,8 +30,8 @@ public class ProdutoController {
 	
 	@GetMapping("/produtos/editar")
 	public String mostrarFormularioEditarProduto(Model model, @RequestParam() Long id) {
-		model.addAttribute("produtos", produtoService.obterProdutos(Long id);
-		return "editar-produto";
+		model.addAttribute("produtos", produtoService.obterProdutos(id));
+		return "produtos";
 	}
 
 	@PostMapping("/produtos")
