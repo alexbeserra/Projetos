@@ -3,6 +3,7 @@ package br.ufg.inf.backend.spring.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,12 +28,6 @@ public class ProdutoController {
 	public String mostrarFormularioAdicionarProduto() {
 		return "adicionar-produto";
 	}
-	
-	@GetMapping("/produtos/editar")
-	public String mostrarFormularioEditarProduto(Model model, @RequestParam() Long id) {
-		model.addAttribute("produtos", produtoService.obterProdutos(id));
-		return "produtos";
-	}
 
 	@PostMapping("/produtos")
 	public String adicionarProduto(@RequestParam String nome, @RequestParam double preco,
@@ -45,13 +40,14 @@ public class ProdutoController {
 		return "redirect:/produtos";
 	}
 
+	@GetMapping("/produtos/editar")
 	public String mostrarFormularioEditarProduto(@RequestParam("id") Long id, Model model) {
 		Produto produto = produtoService.obterProdutos(id);
 		model.addAttribute("produto", produto);
 		return "editar-produto";
 	}
 
-	@PostMapping("/produtos/editar-produto")
+	@PostMapping("/produtos/editar")
 	public String editarProduto(@RequestParam("id") Long id, @RequestParam("nome") String nome,
 			@RequestParam("preco") double preco, RedirectAttributes redirectAttributes) {
 		Produto produto = produtoService.obterProdutos(id);

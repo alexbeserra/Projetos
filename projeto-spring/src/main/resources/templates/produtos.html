@@ -26,10 +26,10 @@
                 <td th:text="${produto.nome}"></td>
                 <td th:text="${produto.preco}"></td>
                 <td>
-                    <a th:href="@{/produtos/editar}" title="Editar">
+                    <a th:href="@{'/produtos/editar?id=' + ${produto.id}}" title="Editar">
                         <img src="icons/edit-icon.png" alt="Editar" width="20" height="20" >
                     </a>
-                    <a th:href="@{/produtos/apagar/{id}(id=${produto.id})}" title="Apagar" onclick="return confirm('Tem certeza que deseja apagar este produto?');">
+                    <a th:href="@{'/produtos/deletar?id=' + ${produto.id}}" title="Apagar">
                         <img src="icons/delete-icon.png" alt="Apagar" width="20" height="20">
                     </a>
                 </td>
