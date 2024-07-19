@@ -99,7 +99,7 @@ form button {
     cursor: pointer;
 }
 
-form button:hover {
+form button:hover,form .editar:hover {
     background-color: #555;
 }
 
@@ -117,4 +117,16 @@ form button:hover {
 .button-container {
     text-align: center;
     margin: 20px;
+}
+
+.delete-link {
+    background: url('/icons/delete-icon.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    width: 20px;  /* largura do botão */
+    height: 20px; /* altura do botão */
+    padding: 0;
+    background-color: #f2f2f2;
+    outline: none;
 }
