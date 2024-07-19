@@ -58,7 +58,7 @@ public class ProdutoController {
 		return "redirect:/produtos";
 	}
 
-	@PostMapping("/produtos/deletar")
+	@GetMapping("/produtos/deletar")
 	public String deletarProduto(@RequestParam("id") Long id, RedirectAttributes redirectAttributes) {
 		produtoService.deletarProduto(id);
 		redirectAttributes.addAttribute("sucesso", "Produto deletado com sucesso!");

@@ -5,44 +5,44 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<form th:action="@{'/produtos/deletar'}" method="post"
-		style="display: inline;">
-		<header>
-			<h1>Lista de Produtos</h1>
-		</header>
-		<div th:if="${sucesso}" class="success-message">
-			<p th:text="${sucesso}"></p>
-		</div>
-		<table>
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Nome</th>
-					<th>Preço</th>
-					<th>Ações</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr th:each="produto : ${produtos}">
-					<td th:text="${produto.id}"></td>
-					<td th:text="${produto.nome}"></td>
-					<td th:text="${produto.preco}"></td>
-					<td><a th:href="@{'/produtos/editar?id=' + ${produto.id}}"
-						title="Editar" class="editar"> <img src="icons/edit-icon.png" alt="Editar"
-							width="20" height="20">
-					</a> <input type="hidden" name="id" th:value="${produto.id}" />
-						<button type="submit" class="delete-link" title="Excluir"
-							onclick="return confirm('Tem certeza que deseja deletar este produto?');">
-						</button> <!-- <a th:href="@{'/produtos/deletar?id=' + ${produto.id}}"  -->
-						<!-- title="Apagar"> <img src="icons/delete-icon.png" --> <!-- alt="Apagar" width="20" height="20"> </a>-->
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="button-container">
-			<a th:href="@{/produtos/adicionar}" class="button">Adicionar Novo
-				Produto</a>
-		</div>
-	</form>
+	<!-- <form th:action="@{'/produtos/deletar'}" method="post" style="display: inline;"> -->
+	<header>
+		<h1>Lista de Produtos</h1>
+	</header>
+	<div th:if="${sucesso}" class="success-message">
+		<p th:text="${sucesso}"></p>
+	</div>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Preço</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<tr th:each="produto : ${produtos}">
+				<td th:text="${produto.id}"></td>
+				<td th:text="${produto.nome}"></td>
+				<td th:text="${produto.preco}"></td>
+				<td><a th:href="@{'/produtos/editar?id=' + ${produto.id}}"
+					title="Editar" class="editar"> <img src="icons/edit-icon.png"
+						alt="Editar" width="20" height="20">
+				</a> <a th:href="@{'/produtos/deletar?id=' + ${produto.id}}"
+					title="Deletar" class="deletar"> <img
+						src="icons/delete-icon.png" alt="Deletar" width="20" height="20">
+				</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="button-container">
+		<a th:href="@{/produtos/adicionar}" class="button">Adicionar Novo
+			Produto</a>
+	</div>
+	<!-- </form> -->
 </body>
 </html>
