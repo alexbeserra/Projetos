@@ -5,7 +5,6 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
-	<!-- <form th:action="@{'/produtos/deletar'}" method="post" style="display: inline;"> -->
 	<header>
 		<h1>Lista de Produtos</h1>
 	</header>
@@ -31,10 +30,13 @@
 				<td><a th:href="@{'/produtos/editar?id=' + ${produto.id}}"
 					title="Editar" class="editar"> <img src="icons/edit-icon.png"
 						alt="Editar" width="20" height="20">
-				</a> <a th:href="@{'/produtos/deletar?id=' + ${produto.id}}"
-					title="Deletar" class="deletar"> <img
-						src="icons/delete-icon.png" alt="Deletar" width="20" height="20">
-				</a></td>
+				</a> 
+					<form th:action="@{'/produtos/deletar'}" method="post" class="delete-link"
+						onsubmit="return confirm('Tem certeza que deseja deletar este produto?');">
+						<input type="hidden" name="id" th:value="${produto.id}">
+						<button type="submit" class="action-icon" width="10px">
+						</button>
+					</form></td>
 			</tr>
 		</tbody>
 	</table>
