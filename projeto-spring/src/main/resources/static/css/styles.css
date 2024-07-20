@@ -58,7 +58,7 @@ a.button:hover {
 	background-color: #555;
 }
 
-form {
+form.adicionar-form {
 	width: 50%;
 	margin: 20px auto;
 	padding: 20px;
@@ -67,17 +67,19 @@ form {
 	border-radius: 8px;
 }
 
-form div {
+form.adicionar-form div {
 	margin-bottom: 15px;
 }
 
-form label {
+form.adicionar-form label {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: bold;
 }
 
-form input[type="text"], form input[type="number"], form input[type="submit"]
+form.adicionar-form input[type="text"], 
+form.adicionar-form input[type="number"], 
+form.adicionar-form input[type="submit"]
 	{
 	width: calc(100% - 20px);
 	padding: 10px;
@@ -87,7 +89,7 @@ form input[type="text"], form input[type="number"], form input[type="submit"]
 	box-sizing: border-box;
 }
 
-form button {
+form.adicionar-form button {
 	width: 100%;
 	padding: 10px;
 	background-color: #333;

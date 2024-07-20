@@ -27,16 +27,21 @@
 				<td th:text="${produto.id}"></td>
 				<td th:text="${produto.nome}"></td>
 				<td th:text="${produto.preco}"></td>
-				<td><a th:href="@{'/produtos/editar?id=' + ${produto.id}}"
-					title="Editar" class="editar"> <img src="icons/edit-icon.png"
-						alt="Editar" width="20" height="20">
-				</a> 
-					<form th:action="@{'/produtos/deletar'}" method="post" class="delete-link"
-						onsubmit="return confirm('Tem certeza que deseja deletar este produto?');">
-						<input type="hidden" name="id" th:value="${produto.id}">
-						<button type="submit" class="action-icon" width="10px">
-						</button>
-					</form></td>
+				<td>
+					<div style="display: flex">
+						<a th:href="@{'/produtos/editar?id=' + ${produto.id}}"
+							title="Editar" class="editar"> 
+							<img src="icons/edit-icon.png"
+							alt="Editar" width="20" height="20" style="margin:5px">
+						</a>
+						<form th:action="@{'/produtos/deletar'}" method="post"
+							onsubmit="return confirm('Tem certeza que deseja deletar este produto?');">
+							<input type="hidden" name="id" th:value="${produto.id}">
+							<button type="submit" class="action-icon delete-link"
+								width="10px"></button>
+						</form>
+					</div>
+				</td>
 			</tr>
 		</tbody>
 	</table>

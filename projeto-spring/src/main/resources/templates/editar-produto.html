@@ -8,7 +8,7 @@
 	<header>
 		<h1>Editar Produto</h1>
 	</header>
-	<form th:action="@{/produtos/editar}" method="post">
+	<form th:action="@{/produtos/editar}" method="post" class="adicionar-form">
 		<input type="hidden" id="id" name="id" th:value="${produto.id}">
 		<div>
 			<label for="nome">Nome:</label> <input type="text" id="nome"
