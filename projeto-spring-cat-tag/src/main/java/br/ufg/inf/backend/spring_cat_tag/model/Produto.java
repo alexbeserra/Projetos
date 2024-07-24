@@ -1,6 +1,7 @@
 package br.ufg.inf.backend.spring_cat_tag.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -15,9 +16,10 @@ public class Produto {
 	private String nome;
 	private double preco;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
+
 
 	public Produto() {
 	}
@@ -50,5 +52,13 @@ public class Produto {
 
 	public void setPreco(double preco) {
 		this.preco = preco;
+	}
+	
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
 	}
 }
