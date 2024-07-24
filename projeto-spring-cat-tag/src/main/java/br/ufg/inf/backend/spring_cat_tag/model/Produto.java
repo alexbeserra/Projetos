@@ -1,11 +1,15 @@
 package br.ufg.inf.backend.spring_cat_tag.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -15,11 +19,14 @@ public class Produto {
 	private Long id;
 	private String nome;
 	private double preco;
-	
+
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "categoria_id")
 	private Categoria categoria;
 
+	@ManyToMany
+	@JoinTable(name = "produto_tag", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "tag_id"))
+	private List<Tag> tags;
 
 	public Produto() {
 	}
@@ -53,7 +60,7 @@ public class Produto {
 	public void setPreco(double preco) {
 		this.preco = preco;
 	}
-	
+
 	public Categoria getCategoria() {
 		return categoria;
 	}
