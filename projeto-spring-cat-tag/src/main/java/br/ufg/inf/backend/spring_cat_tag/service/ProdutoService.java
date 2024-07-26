@@ -1,6 +1,7 @@
 package br.ufg.inf.backend.spring_cat_tag.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,8 @@ public class ProdutoService {
 		return produtoRepository.save(produto);
 	}
 
-	public Produto obterProdutos(Long id) {
-		return produtoRepository.findById(id).orElse(null);
+	public Optional<Produto> obterProdutos(Long id) {
+		return produtoRepository.findById(id);
 	}
 
 	public void deletarProduto(Long id) {
